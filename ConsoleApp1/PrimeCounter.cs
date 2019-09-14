@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ConsoleApp1
@@ -22,14 +23,20 @@ namespace ConsoleApp1
             while(count > 0)
             {
                 candidate += 2;
-
+                var sqr = Math.Sqrt(candidate);
                 var isPrime = true;
                 foreach(var knownPrime in _primes)
+                {
+                    if(sqr < knownPrime)
+                        break;
+
                     if(candidate % knownPrime == 0L)
                     {
                         isPrime = false;
                         break; 
-                    }
+                    } 
+                }
+
                 if(isPrime)
                 {
                     _primes.Add(candidate);
