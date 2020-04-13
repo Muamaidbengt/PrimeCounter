@@ -13,5 +13,11 @@ namespace XUnitTestProject1
         {
              _sut.CountPrimesLessThanOrEqualTo(1).Should().Be(0);
         }
+
+        [Fact]
+        public void PrimesEqualToTwo()
+        {
+            _sut.CountPrimesLessThanOrEqualTo(2).Should().Be(1);
+        }
     }
 }
